@@ -25,9 +25,7 @@ export default function Home() {
                   Home Screen Simulator
                 </p>
                 <h2 className="font-display text-[26px] font-semibold leading-tight tracking-tight text-ink">
-                  iPhone で、
-                  <br />
-                  こう映る。
+                  アイコン見え方ラボ
                 </h2>
                 <p className="pt-1 text-[13px] leading-relaxed text-ink-soft">
                   アップロードしたアイコンは、iOS の角丸（Squircle）に自動でクロップ。
@@ -40,14 +38,12 @@ export default function Home() {
                 <AppNameInput value={appName} onChange={setAppName} />
                 <DownloadButton
                   previewRef={previewRef}
+                  iconDataUrl={iconImage}
                   appName={appName}
                   disabled={!iconImage}
                 />
               </div>
 
-              <p className="text-[11px] leading-relaxed text-ink-mute">
-                アップロード画像はサーバーに送信されません。すべてブラウザ内で処理します。
-              </p>
             </div>
           </section>
 
@@ -57,19 +53,25 @@ export default function Home() {
                 <span>Preview</span>
               </div>
               <Preview ref={previewRef} iconDataUrl={iconImage} appName={appName} />
-              <p className="max-w-[420px] text-center text-[11px] text-ink-mute">
-                破線枠の位置にアイコンが配置されます。<br className="hidden sm:inline" />
-                iOS Squircleマスクが自動で適用されます。
-              </p>
             </div>
           </section>
         </div>
       </main>
 
-      <footer className="border-t border-line/70 bg-paper/60">
-        <div className="mx-auto flex max-w-280 items-center justify-between px-6 py-5 text-[11px] text-ink-mute lg:px-10">
-          <span>© iLookLab</span>
-          <span>MVP · iOSのみ対応</span>
+      <footer className="border-t border-line/70 bg-paper/70">
+        <div className="mx-auto flex max-w-280 flex-col items-center gap-1 px-6 py-4 text-center text-[11px] leading-relaxed text-ink-mute lg:px-10">
+          <p>アップロード画像はサーバーに送信されません。すべてブラウザ内で処理します。</p>
+          <p>
+            © iLookLab{" "}
+            <a
+              href="https://x.com/Aizawa_dev"
+              target="_blank"
+              rel="noreferrer"
+              className="text-ink-mute/80 transition-colors hover:text-ink-soft"
+            >
+              by Aizawa
+            </a>
+          </p>
         </div>
       </footer>
     </div>

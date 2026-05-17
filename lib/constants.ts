@@ -8,7 +8,7 @@ export const ICON_POSITION = {
 } as const;
 
 export const BG_IMAGE = {
-  src: "/assets/iphone-bg.png",
+  src: "/assets/iphone-bg.png?v=transparent-1",
   width: 876,
   height: 1796,
 } as const;

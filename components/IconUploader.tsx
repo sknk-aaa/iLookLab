@@ -68,7 +68,7 @@ export function IconUploader({ value, onChange }: Props) {
         {value ? (
           <div className="flex items-center gap-4">
             <div
-              className="h-16 w-16 shrink-0 overflow-hidden bg-paper-deep"
+              className="h-16 w-16 shrink-0 overflow-hidden"
               style={{ borderRadius: "22.37%" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

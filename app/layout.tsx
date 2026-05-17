@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,21 +9,38 @@ const inter = Inter({
   display: "swap",
 });
 
+const notoSansJp = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "iLookLab — アイコン見え方ラボ",
+  metadataBase: new URL("https://ilook-lab.vercel.app"),
+  title: "アイコン見え方ラボ | アプリアイコンのホーム画面プレビュー",
   description:
-    "アプリのアイコンと名前が、iPhoneのホーム画面で実際にどう見えるかをブラウザ上で確認できるツール。",
+    "アイコン見え方ラボは、アプリアイコンとアプリ名がiPhoneホーム画面でどう見えるかをブラウザで確認できる開発者向けツールです。アップロード画像はサーバーに送信されません。",
   openGraph: {
-    title: "iLookLab — アイコン見え方ラボ",
+    title: "アイコン見え方ラボ | アプリアイコンのホーム画面プレビュー",
     description:
-      "アプリのアイコンと名前が、iPhoneのホーム画面で実際にどう見えるかをブラウザ上で確認できるツール。",
+      "アイコン見え方ラボは、アプリアイコンとアプリ名がiPhoneホーム画面でどう見えるかをブラウザで確認できる開発者向けツールです。",
     type: "website",
+    images: [
+      {
+        url: "/ogp.png",
+        width: 1731,
+        height: 909,
+        alt: "アイコン見え方ラボ",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "iLookLab — アイコン見え方ラボ",
+    title: "アイコン見え方ラボ | アプリアイコンのホーム画面プレビュー",
     description:
-      "アプリのアイコンと名前が、iPhoneのホーム画面で実際にどう見えるかを確認できるツール。",
+      "アイコン見え方ラボは、アプリアイコンの「ホーム画面で見るとなんか違う」をリリース前に防ぐための確認ツールです。",
+    images: ["/ogp.png"],
   },
 };
 
@@ -35,16 +52,8 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${notoSansJp.variable} h-full antialiased`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

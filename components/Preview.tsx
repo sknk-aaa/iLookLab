@@ -46,7 +46,7 @@ export const Preview = forwardRef<HTMLDivElement, Props>(function Preview(
   return (
     <div
       ref={ref}
-      className="relative mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl bg-white preview-shadow"
+      className="relative mx-auto w-full max-w-[420px]"
       style={{ aspectRatio: `${BG_IMAGE.width} / ${BG_IMAGE.height}` }}
     >
       <div ref={innerRef} className="relative h-full w-full">
