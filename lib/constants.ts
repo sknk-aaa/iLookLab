@@ -1,10 +1,11 @@
 // 値は public/assets/iphone-bg.png (876×1796) をImageMagickで実測:
-// 破線枠の bounding box は x=287..410, y=1010..1135 (中心 348.5, 1072.5 / サイズ 123×125)
-// 「My App」ラベル中心は y≈1180 → アイコン中心からのオフセット 107.5px
+// 破線枠の真の外形 bounding box は x=283..411, y=1009..1137 (中心 347, 1073 / サイズ 128×128)
+// 「My App」ラベル中心は y≈1180 → アイコン中心からのオフセット 107px
+// sizeRatio は枠 128px より少し大きめにして、破線を完全に覆い隠す
 export const ICON_POSITION = {
-  centerX: 0.398,
+  centerX: 0.396,
   centerY: 0.597,
-  sizeRatio: 0.142,
+  sizeRatio: 0.148,
   labelOffsetY: 0.060,
   labelFontRatio: 0.0285,
 } as const;
