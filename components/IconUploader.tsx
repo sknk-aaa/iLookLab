@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 
 type Props = {
   value: string | null;
@@ -28,6 +29,7 @@ export function IconUploader({ value, onChange }: Props) {
     if (!file.type.startsWith("image/")) return;
     const url = await readAsDataUrl(file);
     onChange(url);
+    track("icon_uploaded");
   }
 
   return (

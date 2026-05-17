@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type RefObject } from "react";
+import { track } from "@vercel/analytics";
 import {
   buildFileName,
   buildIconFileName,
@@ -24,6 +25,7 @@ export function DownloadButton({ previewRef, iconDataUrl, appName, disabled }: P
     setBusyTarget("preview");
     try {
       await exportNodeToPng(node, buildFileName(appName));
+      track("preview_downloaded");
     } finally {
       setBusyTarget(null);
     }
@@ -34,6 +36,7 @@ export function DownloadButton({ previewRef, iconDataUrl, appName, disabled }: P
     setBusyTarget("icon");
     try {
       await exportMaskedIconToPng(iconDataUrl, buildIconFileName(appName));
+      track("icon_downloaded");
     } finally {
       setBusyTarget(null);
     }
