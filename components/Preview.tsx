@@ -96,7 +96,7 @@ export const Preview = forwardRef<HTMLDivElement, Props>(function Preview(
             style={{
               left: `${ICON_POSITION.centerX * 100}%`,
               top: `${(ICON_POSITION.centerY + ICON_POSITION.labelOffsetY) * 100}%`,
-              transform: "translate(-50%, 0)",
+              transform: "translate(-50%, -50%)",
               fontSize: `${labelFontSize}px`,
               lineHeight: 1,
               letterSpacing: "0.01em",
