@@ -24,7 +24,7 @@ export function AppNameInput({ value, onChange }: Props) {
           className="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[14px] text-ink placeholder:text-ink-mute outline-none transition-shadow duration-150 focus:border-accent focus:ring-2 focus:ring-accent/20"
         />
         <p className="text-[11px] text-ink-mute">
-          8文字目以降は「…」で省略されます
+          一定の幅を超えると末尾が「…」で省略されます（iOS と同じ挙動）
         </p>
       </div>
     </section>

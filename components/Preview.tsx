@@ -3,7 +3,6 @@
 import { forwardRef, useEffect, useId, useMemo, useRef, useState } from "react";
 import { getSvgPath } from "figma-squircle";
 import { BG_IMAGE, ICON_POSITION } from "@/lib/constants";
-import { truncateName } from "@/lib/utils/truncateName";
 
 type Props = {
   iconDataUrl: string | null;
@@ -42,7 +41,7 @@ export const Preview = forwardRef<HTMLDivElement, Props>(function Preview(
   }, []);
 
   const labelFontSize = Math.max(8, Math.round(width * ICON_POSITION.labelFontRatio * 100) / 100);
-  const truncated = truncateName(appName);
+  const labelMaxWidth = Math.round(width * ICON_POSITION.labelMaxWidthRatio * 100) / 100;
 
   return (
     <div
@@ -90,7 +89,7 @@ export const Preview = forwardRef<HTMLDivElement, Props>(function Preview(
           </div>
         ) : null}
 
-        {truncated ? (
+        {appName ? (
           <div
             className="font-apple absolute pointer-events-none select-none text-white"
             style={{
@@ -102,9 +101,13 @@ export const Preview = forwardRef<HTMLDivElement, Props>(function Preview(
               letterSpacing: "0.01em",
               textShadow: "0 1px 2px rgba(0,0,0,0.35)",
               whiteSpace: "nowrap",
+              maxWidth: `${labelMaxWidth}px`,
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              textAlign: "center",
             }}
           >
-            {truncated}
+            {appName}
           </div>
         ) : null}
       </div>
