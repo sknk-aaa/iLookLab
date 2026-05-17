@@ -16,7 +16,7 @@ export default function Home() {
     <div className="relative z-10 flex min-h-full flex-1 flex-col">
       <Header />
 
-      <main className="mx-auto w-full max-w-[1440px] flex-1 px-6 py-8 lg:px-10 lg:py-14">
+      <main className="mx-auto w-full max-w-280 flex-1 px-6 py-8 lg:px-10 lg:py-14">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-10 lg:gap-14">
           <section className="md:col-span-4">
             <div className="space-y-8 md:sticky md:top-8">
@@ -25,13 +25,13 @@ export default function Home() {
                   Home Screen Simulator
                 </p>
                 <h2 className="font-display text-[26px] font-semibold leading-tight tracking-tight text-ink">
-                  実機に入れる前に、
+                  iPhone で、
                   <br />
-                  ホーム画面で確かめる。
+                  こう映る。
                 </h2>
                 <p className="pt-1 text-[13px] leading-relaxed text-ink-soft">
-                  アイコンとアプリ名が、他のアプリと並んだときどう見えるか。
-                  ブラウザ上で即座にプレビューできます。
+                  アップロードしたアイコンは、iOS の角丸（Squircle）に自動でクロップ。
+                  アプリ名と並んだ実機ホーム画面の見え方を、ブラウザで即座にプレビューできます。
                 </p>
               </div>
 
@@ -53,9 +53,8 @@ export default function Home() {
 
           <section className="md:col-span-6">
             <div className="flex flex-col items-center justify-start gap-4">
-              <div className="flex w-full items-center justify-between text-[11px] uppercase tracking-[0.18em] text-ink-mute">
+              <div className="w-full text-[11px] uppercase tracking-[0.18em] text-ink-mute">
                 <span>Preview</span>
-                <span>iPhone · iOS</span>
               </div>
               <Preview ref={previewRef} iconDataUrl={iconImage} appName={appName} />
               <p className="max-w-[420px] text-center text-[11px] text-ink-mute">
@@ -68,7 +67,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-line/70 bg-paper/60">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 text-[11px] text-ink-mute lg:px-10">
+        <div className="mx-auto flex max-w-280 items-center justify-between px-6 py-5 text-[11px] text-ink-mute lg:px-10">
           <span>© iLookLab</span>
           <span>MVP · iOSのみ対応</span>
         </div>

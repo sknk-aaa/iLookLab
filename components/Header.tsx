@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="relative z-10 border-b border-line/70 bg-paper/80 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-4 px-6 lg:px-10">
+      <div className="mx-auto flex h-16 max-w-280 items-center gap-4 px-6 lg:px-10">
         <div className="flex items-center gap-3">
           <span aria-hidden className="diamond-mark" />
           <h1 className="font-display text-[19px] font-semibold tracking-tight text-ink">
