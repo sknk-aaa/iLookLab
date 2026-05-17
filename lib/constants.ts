@@ -4,7 +4,7 @@ export const ICON_POSITION = {
   sizeRatio: 0.150,      // アイコンの幅 / 画像幅
   labelOffsetY: 0.0485,  // アイコン中心からアプリ名中心までの距離
   labelFontRatio: 0.0280,// アプリ名のフォントサイズ / 画像幅
-  labelMaxWidthRatio: 0.22, // アプリ名の最大幅 / 画像幅（iOS の挙動に合わせ、超過分は「…」で省略）
+  labelMaxWidthRatio: 0.20, // アプリ名の最大幅 / 画像幅（iOS の挙動に合わせ、超過分は「…」で省略）
 } as const;
 
 export const BG_IMAGE = {
