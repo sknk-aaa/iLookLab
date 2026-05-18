@@ -43,6 +43,9 @@ export const metadata: Metadata = {
       "アイコン見え方ラボは、アプリアイコンの「ホーム画面で見るとなんか違う」をリリース前に防ぐための確認ツールです。",
     images: ["/ogp.png"],
   },
+  verification: {
+    google: "sCUFBC5u_EjtLZ3TO8ujTQnVLFvHGQ4fIM6Fzm6TgnQ",
+  },
 };
 
 export default function RootLayout({
